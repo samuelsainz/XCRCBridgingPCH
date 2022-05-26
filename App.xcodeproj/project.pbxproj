@@ -177,12 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 367E7D46283F2EAB0077E971 /* Build configuration list for PBXNativeTarget "App" */;
 			buildPhases = (
-				118C1B50E140E948A861CB62 /* [RC] RemoteCache_prebuild */,
+				FA398825901A0CCB721968DB /* [RC] RemoteCache_prebuild */,
 				367E7D29283F2EA80077E971 /* Sources */,
 				367E7D2A283F2EA80077E971 /* Frameworks */,
 				367E7D2B283F2EA80077E971 /* Resources */,
-				43BB3A396BC930235A4FA1C9 /* [RC] RemoteCache_postbuild */,
-				8663FFF2829B653686E32336 /* [RC] RemoteCache_mark */,
+				7240545035495D55F9F2EC56 /* [RC] RemoteCache_postbuild */,
 			);
 			buildRules = (
 			);
@@ -199,11 +198,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 367E7D69283F2EE30077E971 /* Build configuration list for PBXNativeTarget "DependencyObjC" */;
 			buildPhases = (
-				118C1B50E140E948A861CB62 /* [RC] RemoteCache_prebuild */,
+				FA398825901A0CCB721968DB /* [RC] RemoteCache_prebuild */,
 				367E7D5F283F2EE30077E971 /* Sources */,
 				367E7D60283F2EE30077E971 /* Frameworks */,
 				367E7D61283F2EE30077E971 /* CopyFiles */,
-				43BB3A396BC930235A4FA1C9 /* [RC] RemoteCache_postbuild */,
+				7240545035495D55F9F2EC56 /* [RC] RemoteCache_postbuild */,
 			);
 			buildRules = (
 			);
@@ -218,11 +217,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 367E7D74283F2EEC0077E971 /* Build configuration list for PBXNativeTarget "DependencySwift" */;
 			buildPhases = (
-				118C1B50E140E948A861CB62 /* [RC] RemoteCache_prebuild */,
+				FA398825901A0CCB721968DB /* [RC] RemoteCache_prebuild */,
 				367E7D6C283F2EEC0077E971 /* Sources */,
 				367E7D6D283F2EEC0077E971 /* Frameworks */,
+				367E7D84283F32B70077E971 /* ShellScript */,
 				367E7D6E283F2EEC0077E971 /* CopyFiles */,
-				43BB3A396BC930235A4FA1C9 /* [RC] RemoteCache_postbuild */,
+				7240545035495D55F9F2EC56 /* [RC] RemoteCache_postbuild */,
 			);
 			buildRules = (
 			);
@@ -290,31 +290,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		118C1B50E140E948A861CB62 /* [RC] RemoteCache_prebuild */ = {
+		367E7D84283F32B70077E971 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
-			dependencyFile = "$(TARGET_TEMP_DIR)/prebuild.d";
 			files = (
 			);
-			inputPaths = (
-				/tmp/XCRCBridgingPCH/XCRC/xcprebuild,
+			inputFileListPaths = (
 			);
-			name = "[RC] RemoteCache_prebuild";
+			inputPaths = (
+				"$(DERIVED_SOURCES_DIR)/$(SWIFT_OBJC_INTERFACE_HEADER_NAME)",
+			);
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(TARGET_TEMP_DIR)/rc.enabled",
+				"$(BUILT_PRODUCTS_DIR)/include/$(PRODUCT_MODULE_NAME)/$(SWIFT_OBJC_INTERFACE_HEADER_NAME)",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$SCRIPT_INPUT_FILE_0\"";
+			shellScript = "ditto \"${SCRIPT_INPUT_FILE_0}\" \"${SCRIPT_OUTPUT_FILE_0}\"\n\n";
 		};
-		43BB3A396BC930235A4FA1C9 /* [RC] RemoteCache_postbuild */ = {
+		7240545035495D55F9F2EC56 /* [RC] RemoteCache_postbuild */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			dependencyFile = "$(TARGET_TEMP_DIR)/postbuild.d";
 			files = (
 			);
 			inputPaths = (
-				/tmp/XCRCBridgingPCH/XCRC/xcpostbuild,
+				/tmp/XCRCBridgingPCH2/XCRC/xcpostbuild,
 			);
 			name = "[RC] RemoteCache_postbuild";
 			outputPaths = (
@@ -325,20 +327,22 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$SCRIPT_INPUT_FILE_0\"";
 		};
-		8663FFF2829B653686E32336 /* [RC] RemoteCache_mark */ = {
+		FA398825901A0CCB721968DB /* [RC] RemoteCache_prebuild */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
+			dependencyFile = "$(TARGET_TEMP_DIR)/prebuild.d";
 			files = (
 			);
 			inputPaths = (
-				/tmp/XCRCBridgingPCH/XCRC/xcprepare,
+				/tmp/XCRCBridgingPCH2/XCRC/xcprebuild,
 			);
-			name = "[RC] RemoteCache_mark";
+			name = "[RC] RemoteCache_prebuild";
 			outputPaths = (
+				"$(TARGET_TEMP_DIR)/rc.enabled",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$SCRIPT_INPUT_FILE_0\" mark --configuration \"$CONFIGURATION\" --platform \"$PLATFORM_NAME\"";
+			shellScript = "\"$SCRIPT_INPUT_FILE_0\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -524,6 +528,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CC = /tmp/XCRCBridgingPCH2/XCRC/xccc;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -536,20 +541,22 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD = /tmp/XCRCBridgingPCH2/XCRC/xcld;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBTOOL = /tmp/XCRCBridgingPCH2/XCRC/xclibtool;
 				MARKETING_VERSION = 1.0;
 				OTHER_CFLAGS = (
 					"$(inherited)",
-					"-fdebug-prefix-map=/private/tmp/XCRCBridgingPCH=$(XCRC_FAKE_SRCROOT)",
+					"-fdebug-prefix-map=/private/tmp/XCRCBridgingPCH2=$(XCRC_FAKE_SRCROOT)",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -debug-prefix-map /private/tmp/XCRCBridgingPCH=$(XCRC_FAKE_SRCROOT)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -debug-prefix-map /private/tmp/XCRCBridgingPCH2=$(XCRC_FAKE_SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.polaczyk.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_EXEC = /tmp/XCRCBridgingPCH/XCRC/xcswiftc;
+				SWIFT_EXEC = /tmp/XCRCBridgingPCH2/XCRC/xcswiftc;
 				SWIFT_OBJC_BRIDGING_HEADER = "App/App-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -593,19 +600,22 @@
 		367E7D6A283F2EE30077E971 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CC = /tmp/XCRCBridgingPCH2/XCRC/xccc;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				LD = /tmp/XCRCBridgingPCH2/XCRC/xcld;
+				LIBTOOL = /tmp/XCRCBridgingPCH2/XCRC/xclibtool;
 				OTHER_CFLAGS = (
 					"$(inherited)",
-					"-fdebug-prefix-map=/private/tmp/XCRCBridgingPCH=$(XCRC_FAKE_SRCROOT)",
+					"-fdebug-prefix-map=/private/tmp/XCRCBridgingPCH2=$(XCRC_FAKE_SRCROOT)",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				OTHER_SWIFT_FLAGS = "$(inherited) -debug-prefix-map /private/tmp/XCRCBridgingPCH=$(XCRC_FAKE_SRCROOT)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -debug-prefix-map /private/tmp/XCRCBridgingPCH2=$(XCRC_FAKE_SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_EXEC = /tmp/XCRCBridgingPCH/XCRC/xcswiftc;
+				SWIFT_EXEC = /tmp/XCRCBridgingPCH2/XCRC/xcswiftc;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				XCRC_FAKE_SRCROOT = /xxxxxxxxxx;
 				XCRC_PLATFORM_PREFERRED_ARCH = "$(LINK_FILE_LIST_$(CURRENT_VARIANT)_$(PLATFORM_PREFERRED_ARCH):dir:standardizepath:file:default=arm64)";
@@ -629,26 +639,29 @@
 		367E7D75283F2EEC0077E971 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CC = /tmp/XCRCBridgingPCH2/XCRC/xccc;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				LD = /tmp/XCRCBridgingPCH2/XCRC/xcld;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBTOOL = /tmp/XCRCBridgingPCH2/XCRC/xclibtool;
 				OTHER_CFLAGS = (
 					"$(inherited)",
-					"-fdebug-prefix-map=/private/tmp/XCRCBridgingPCH=$(XCRC_FAKE_SRCROOT)",
+					"-fdebug-prefix-map=/private/tmp/XCRCBridgingPCH2=$(XCRC_FAKE_SRCROOT)",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				OTHER_SWIFT_FLAGS = "$(inherited) -debug-prefix-map /private/tmp/XCRCBridgingPCH=$(XCRC_FAKE_SRCROOT)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -debug-prefix-map /private/tmp/XCRCBridgingPCH2=$(XCRC_FAKE_SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_EXEC = /tmp/XCRCBridgingPCH/XCRC/xcswiftc;
+				SWIFT_EXEC = /tmp/XCRCBridgingPCH2/XCRC/xcswiftc;
 				SWIFT_OBJC_BRIDGING_HEADER = "DependencySwift/DependencySwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;

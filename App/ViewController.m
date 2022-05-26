@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "DependencySwift/DependencySwift-Swift.h"
 
 @interface ViewController ()
 

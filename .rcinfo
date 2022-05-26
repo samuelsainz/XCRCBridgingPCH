@@ -2,7 +2,7 @@
 cache_addresses:
 - http://localhost:8080/cache
 primary_repo: "."
-primary_branch: main
+primary_branch: master
 mode: producer
 custom_rewrite_envs:
 - PODS_TARGET_SRCROOT

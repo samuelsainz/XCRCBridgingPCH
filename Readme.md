@@ -24,14 +24,14 @@ XCRC/xcprepare integrate --input App.xcodeproj --mode producer --final-producer-
 
 ```
 2. Build in Xcode
-3. Move the location of the repo to emulate absolute different paths for producer and conumser 
-4. Build in the consumer
+3. Move the location of the repo to emulate absolute different paths for producer and consumer and clean DerivedData
+4. Generate the consumer mode
 
 ```
 XCRC/xcprepare integrate --input App.xcodeproj --mode consumer
 
 ```
-5. Build in Xcode
+5. Build the project in Xcode
 
 #### Expected results:
 

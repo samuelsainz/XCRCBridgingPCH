@@ -1,0 +1,15 @@
+---
+cache_addresses:
+- http://localhost:8080/cache
+primary_repo: "."
+primary_branch: main
+mode: producer
+custom_rewrite_envs:
+- PODS_TARGET_SRCROOT
+- BUILT_PRODUCTS_DIR
+- TARGET_BUILD_DIR
+- XCRC_COOCAPODS_ROOT
+xccc_file: ".rc/xccc"
+remote_commit_file: ".rc/arc.rc"
+prettify_meta_files: false
+disable_certificate_verification: false

@@ -11,5 +11,5 @@ class DependencySwift {
 
 @objc class Inherits: SomeObjC {
     @objc
-    var style: UITableViewCellStyle = .default
+    var style: SomeCustomEnumDefinition = .default
 }

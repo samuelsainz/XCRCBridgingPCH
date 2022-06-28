@@ -17,7 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    UITableViewCellStyle style = UITableViewCellStyleValue1;
+    [self doSomethingWithTheStyle:style];
 }
 
+- (void)doSomethingWithTheStyle:(UITableViewCellStyle)style {
+
+}
 
 @end

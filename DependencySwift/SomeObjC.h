@@ -14,11 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-typedef NS_ENUM(NSInteger, UITableViewCellStyle) {
-        UITableViewCellStyleDefault,
-        UITableViewCellStyleValue1,
-        UITableViewCellStyleValue2,
-        UITableViewCellStyleSubtitle
+typedef NS_ENUM(NSInteger, SomeCustomEnumDefinition) {
+        SomeCustomEnumDefinitionDefault,
+        SomeCustomEnumDefinitionValue1,
+        SomeCustomEnumDefinitionValue2,
+        SomeCustomEnumDefinitionSubtitle
 };
 
 NS_ASSUME_NONNULL_END

@@ -6,9 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DependencySwift/DependencySwift-Swift.h"
 
 @interface ViewController : UIViewController
 
+@property SomeCustomEnumDefinition someCustomEnum;
 
 @end
 

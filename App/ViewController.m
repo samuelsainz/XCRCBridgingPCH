@@ -6,7 +6,6 @@
 //
 
 #import "ViewController.h"
-#import "DependencySwift/DependencySwift-Swift.h"
 
 @interface ViewController ()
 
@@ -18,12 +17,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    UITableViewCellStyle style = UITableViewCellStyleValue1;
-    [self doSomethingWithTheStyle:style];
+    self.someCustomEnum = SomeCustomEnumDefinitionValue1;
 }
 
-- (void)doSomethingWithTheStyle:(UITableViewCellStyle)style {
-
-}
 
 @end

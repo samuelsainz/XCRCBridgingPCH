@@ -9,6 +9,8 @@
 
 @interface ViewController ()
 
+@property (assign) BOOL aFlag;
+
 @end
 
 @implementation ViewController
@@ -16,9 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    self.someCustomEnum = SomeCustomEnumDefinitionValue1;
 }
 
+- (void)switchFlag {
+    self.aFlag = !self.aFlag;
+}
 
 @end

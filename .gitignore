@@ -1,3 +1,4 @@
 *.xcuserdatad
 XCRC/
 user.rcinfo
+.DS_Store

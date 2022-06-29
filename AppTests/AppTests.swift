@@ -20,8 +20,7 @@ class AppTests: XCTestCase {
 
     func testExample() throws {
         let viewController = ViewController()
-        let enumValue = viewController.someCustomEnum
-        XCTAssertTrue(enumValue == .default)
+        viewController.switchFlag()
     }
 
     func testPerformanceExample() throws {
